@@ -32,7 +32,7 @@ const ContactUs = ({ contactRef }) => {
     };
 
     // Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', and 'YOUR_USER_ID' with your actual EmailJS IDs
-    emailjs.send('service_hqwqsup', 'template_sqi8cc2', templateParams, 'vBmHfnzOFEbjBvuyK')
+    emailjs.send('service_zfbrp9c', 'template_lj6tt7i', templateParams, 'hxUht8MA2FmoRKNQF')
       .then((response) => {
         console.log('Email sent successfully:', response.status, response.text);
         toast.success('Your message has been sent successfully!');
