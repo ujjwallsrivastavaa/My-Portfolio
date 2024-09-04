@@ -38,7 +38,7 @@ function Header({ homeRef, skillsRef, contactRef, projectsRef }) {
     const observerOptions = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.6, // 60% of the section needs to be in view
+      threshold: 0.3, // 60% of the section needs to be in view
     };
 
     const observerCallback = (entries) => {
