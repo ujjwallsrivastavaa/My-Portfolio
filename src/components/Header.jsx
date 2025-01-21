@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
-import { FaCode } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import { FaCode, FaMoon, FaSun } from "react-icons/fa";
 
-function Header({ homeRef, skillsRef, contactRef, projectsRef }) {
+function Header({ homeRef, skillsRef, contactRef, projectsRef, toggleDarkMode, isDarkMode }) {
   const [hasShadow, setHasShadow] = useState(false);
   const [activeSection, setActiveSection] = useState('');
 
   const sectionRefs = [
-    { section: 'Home', ref: homeRef },
-    { section: 'Projects', ref: projectsRef },
-    { section: 'Skills', ref: skillsRef },
-    { section: 'Contact', ref: contactRef },
+    { section: 'HOME', ref: homeRef },
+    { section: 'PROJECTS', ref: projectsRef },
+    { section: 'SKILLS', ref: skillsRef },
+    { section: 'CONTACT', ref: contactRef },
   ];
 
   const scrollToSection = (sectionRef) => {
@@ -70,9 +70,9 @@ function Header({ homeRef, skillsRef, contactRef, projectsRef }) {
 
   return (
     <div
-      className={`fixed top-0 left-0 right-0 bg-white ${
-        hasShadow ? "border-b-[2px] shadow-lg" : ""
-      } transition-all duration-300 py-5 flex justify-between items-center px-6`}
+      className={`fixed top-0 left-0 right-0 ${
+        isDarkMode ? 'bg-black text-white' : 'bg-white text-black'
+      } ${hasShadow ? "border-b-[2px] shadow-lg" : ""} transition-all duration-300 py-5 flex justify-between items-center px-6`}
     >
       <FaCode />
       <nav>
@@ -81,13 +81,15 @@ function Header({ homeRef, skillsRef, contactRef, projectsRef }) {
             <li
               key={section}
               className={`cursor-pointer relative inline-block group hover:font-semibold ${
-                activeSection === section ? "text-black font-bold" : ""
-              }  transition-all duration-200 ` }
+                activeSection === section ? "font-bold" : ""
+              } transition-all duration-200`}
               onClick={() => scrollToSection(ref)}
             >
               {section}
               <span
-                className={`absolute bottom-0 left-[2px] right-[2px] h-0.5 bg-black transform ${
+                className={`absolute bottom-0 left-[2px] right-[2px] h-0.5 ${
+                  isDarkMode ? 'bg-white' : 'bg-black'
+                } transform ${
                   activeSection === section
                     ? "translate-y-0 opacity-100"
                     : "-translate-y-1 opacity-0"
@@ -97,6 +99,9 @@ function Header({ homeRef, skillsRef, contactRef, projectsRef }) {
           ))}
         </ul>
       </nav>
+      <button onClick={toggleDarkMode} className="text-2xl ">
+        {isDarkMode ? <FaSun /> : <FaMoon />}
+      </button>
     </div>
   );
 }
