@@ -1,5 +1,5 @@
 import React from "react";
-import usdp from "../utils/usdp.jpeg"; // Ensure the correct path to your image file
+import usdp from "../utils/dp.jpg"; // Ensure the correct path to your image file
 
 const Hero = ({ homeRef, projectsRef, contactRef }) => {
   const scrollToSection = (sectionRef) => {
@@ -41,12 +41,13 @@ const Hero = ({ homeRef, projectsRef, contactRef }) => {
 
       {/* Replaced About Me with Image */}
       <div className="max-w-[400px] flex-grow flex justify-center">
-        <img
-          src={usdp} // Now using the imported image
-          alt="Ujjwal Srivastava"
-          className="w-auto h-auto rounded-full object-cover"
-        />
-      </div>
+  <img
+    src={usdp} // Now using the imported image
+    alt="Ujjwal Srivastava"
+    className="w-auto h-auto rounded-full object-cover border-2 border-black"
+  />
+</div>
+
     </div>
   );
 };
