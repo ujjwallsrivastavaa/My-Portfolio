@@ -39,8 +39,9 @@ function App() {
       />
       <main className="mt-20">
         <Hero homeRef={homeRef} projectsRef={projectsRef} contactRef={contactRef} />
-        <Projects projectsRef={projectsRef} />
         <Skills skillsRef={skillsRef} />
+        <Projects projectsRef={projectsRef} />
+        
         <ContactUs contactRef={contactRef} />
       </main>
       <ToastContainer className="lg:text-xl" />

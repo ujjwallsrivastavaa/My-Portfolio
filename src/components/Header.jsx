@@ -93,7 +93,7 @@ function Header({ homeRef, skillsRef, contactRef, projectsRef, toggleDarkMode, i
 
               {/* Tooltip for section name */}
               <span
-                className={`absolute top-full left-1/2 transform -translate-x-1/2 text-sm mt-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200`}
+                className={`absolute top-full left-1/2 transform -translate-x-1/2 text-sm mt-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200`}
               >
                 {section} {/* Section name (HOME, SKILLS, etc.) */}
               </span>

@@ -29,11 +29,11 @@ const Skills = ({ skillsRef }) => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 w-full max-w-5xl">
         {skillCategories.map((category, index) => (
-          <div key={index} className="p-5 bg-white rounded-lg shadow-lg">
-            <h2 className="text-2xl font-semibold mb-4">{category.title}</h2>
+          <div key={index} className="p-5 bg-black rounded-lg shadow-lg">
+            <h2 className="text-2xl font-semibold mb-4 text-white">{category.title}</h2>
             <ul className="list-disc pl-5">
               {category.skills.map((skill, index) => (
-                <li key={index} className="text-lg text-gray-700">
+                <li key={index} className="text-lg text-white">
                   {skill}
                 </li>
               ))}
